@@ -1,0 +1,24 @@
+* { box-sizing: border-box; margin: 0; }
+:root { --brand: #2f6f6a; --bg: #f4f4f0; }
+body { font-family: sans-serif; background: var(--bg); }
+
+header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 40px;
+}
+
+.cards {
+  display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;
+  padding: 20px;
+}
+.card {
+  background: white; border-radius: 12px; padding: 24px;
+  width: 240px; text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+}
+.card:hover { transform: translateY(-6px); }
+.card img { border-radius: 50%; }
+.card .role { color: var(--brand); font-weight: bold; }
+body.dark { background: #1a1a1a; color: #eee; }
+body.dark .card { background: #2b2b2b; }
