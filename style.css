@@ -52,3 +52,75 @@ footer { text-align: center; padding: 30px; color: #888; }
     font-weight: bold;
 }
 body.dark .badge { background: #1f3a37; color: #7fd1c4; }
+
+/* 클릭하면 갤러리가 뜨는 항목 (겉모습은 일반 글자와 동일) */
+.photo-link { cursor: pointer; }
+.photo-link:hover { color: #2f6f6a; }
+body.dark .photo-link:hover { color: #7fd1c4; }
+
+/* 팝업 */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    padding: 20px;
+}
+.modal.open { display: flex; }
+
+.modal-box {
+    position: relative;
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    max-width: 95vw;
+    max-height: 90vh;
+    overflow: auto;
+    text-align: center;
+}
+body.dark .modal-box { background: #2b2b2b; color: #eee; }
+.modal-box h3 { margin-bottom: 16px; }
+
+.modal-close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: inherit;
+}
+
+.modal-grid { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+.modal-grid img { width: clamp(240px, 28vw, 560px); max-width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 8px; }
+
+/* 국기 (한 줄에 5개씩 고정) */
+.modal-grid.flags {
+    display: grid;
+    grid-template-columns: repeat(5, 96px);
+    gap: 16px 12px;
+    justify-content: center;
+}
+.flag-box {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal-grid .flag-item img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.modal-grid .flag-item span { display: block; margin-top: 6px; font-size: 13px; }
+
+/* 좁은 화면(폰)에서는 3개씩 */
+@media (max-width: 600px) {
+    .modal-grid.flags { grid-template-columns: repeat(3, 80px); }
+    .flag-box { height: 60px; }
+}

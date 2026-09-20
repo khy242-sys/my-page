@@ -29,29 +29,28 @@
 
         <article class="card">
             <h2>관심 분야</h2>
-            <p>AI<br>Data Science<br>Tech Industry<br>금융 데이터 분석<br>반복 업무 자동화<br>주식<br>KBO 야구 (롯데)<br>해외 축구 (ATLETI)<br>해외 여행</p>
-            </article>
+            <p>AI<br>Data Science<br>Tech Industry<br>금융 데이터 분석<br>반복 업무 자동화<br>주식<br>KBO 야구 (롯데)<br><span class="photo-link" data-gallery="atleti">해외 축구 (ATLETI)</span><br><span class="photo-link" data-gallery="travel">해외 여행</span></p></p>
+        </article>
 
         <article class="card">
             <h2>이번 학기 목표</h2>
             <p>웹 페이지와 API를<br>직접 만들어<br>클라우드에 배포해 보기</p>
-            </article>  
+        </article>
 
         <article class="card">
             <h2>사용한 기술</h2>
-                <div class="badges">
-                    <span class="badge">HTML</span>
-                    <span class="badge">CSS</span>
-                    <span class="badge">JavaScript</span>
-                    <span class="badge">Python</span>
-                    <span class="badge">FastAPI</span>
-                    <span class="badge">Git</span>
-                    <span class="badge">GitHub</span>
-                    <span class="badge">Vercel</span>
-                    <span class="badge">Render</span>
-                </div>
-            </article>
-         </article>
+            <div class="badges">
+                <span class="badge">HTML</span>
+                <span class="badge">CSS</span>
+                <span class="badge">JavaScript</span>
+                <span class="badge">Python</span>
+                <span class="badge">FastAPI</span>
+                <span class="badge">Git</span>
+                <span class="badge">GitHub</span>
+                <span class="badge">Vercel</span>
+                <span class="badge">Render</span>
+            </div>
+        </article>
     </main>
 
     <section class="api-box">
@@ -60,9 +59,19 @@
         <button id="api-btn">API 호출하기</button>
         <pre id="api-result">아직 호출 전입니다</pre>
     </section>
-        <footer>
-            <p>© 2026 김한룡</p>
-        </footer>
+
+    <footer>
+        <p>© 2026 김한룡</p>
+    </footer>
+
+    <div id="photo-modal" class="modal">
+        <div class="modal-box">
+            <button class="modal-close" aria-label="닫기">✕</button>
+            <h3 id="modal-title"></h3>
+            <div id="modal-grid" class="modal-grid"></div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
     <script>
         const API_URL = "https://cloud-computing-personal-project-1.onrender.com";
