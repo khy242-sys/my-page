@@ -1,26 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>김한룡 소개</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .api-box { max-width: 520px; margin: 20px auto 40px; padding: 24px; background: white; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        .api-box pre { margin-top: 12px; padding: 12px; background: #f0f0f0; border-radius: 8px; text-align: left; white-space: pre-wrap; }
+        body.dark .api-box { background: #2b2b2b; }
+        body.dark .api-box pre { background: #1a1a1a; }
+    </style>
 </head>
 <body>
     <header>
-  <h1>김한룡을 소개합니다</h1>
-  <button id="theme-btn">다크모드 전환</button>
-</header>
+        <h1>김한룡을 소개합니다</h1>
+        <button id="theme-btn">다크모드 전환</button>
+    </header>
 
-<main class="cards">
-  <article class="card">
-    <img src="https://placehold.co/120x120" alt="프로필 사진">
-    <h2>김한룡</h2>
-    <p class="role">디지털금융 MBA</p>
-    <p>증권사에서 IB 업무를 맡고 있습니다</p>
-    <a href="https://github.com">GitHub 프로필</a>
-  </article>
-</main>
-<script src="script.js"></script>
+    <main class="cards">
+        <article class="card">
+            <img src="atleti_logo.jpg" alt="김한룡 프로필 사진">
+            <h2>김한룡</h2>
+            <p class="role">KAIST 디지털금융 MBA<br>Investment Banking</p>
+            <p>증권사에서<br>IB(IPO 및 비상장투자)<br>업무를 맡고 있습니다</p>
+            <a href="https://github.com/khy242-sys">GitHub 프로필</a>
+        </article>
+
+        <article class="card">
+            <h2>관심 분야</h2>
+            <p>AI<br>Data Science<br>Tech Industry<br>금융 데이터 분석<br>반복 업무 자동화<br>주식<br>KBO 야구 (롯데)<br>해외 축구 (ATLETI)<br>해외 여행</p>
+            </article>
+
+        <article class="card">
+            <h2>이번 학기 목표</h2>
+            <p>웹 페이지와 API를<br>직접 만들어<br>클라우드에 배포해 보기</p>
+            </article>  
+
+        <article class="card">
+            <h2>사용한 기술</h2>
+                <div class="badges">
+                    <span class="badge">HTML</span>
+                    <span class="badge">CSS</span>
+                    <span class="badge">JavaScript</span>
+                    <span class="badge">Python</span>
+                    <span class="badge">FastAPI</span>
+                    <span class="badge">Git</span>
+                    <span class="badge">GitHub</span>
+                    <span class="badge">Vercel</span>
+                    <span class="badge">Render</span>
+                </div>
+            </article>
+         </article>
+    </main>
+
+    <section class="api-box">
+        <h2>백엔드 API 연동 결과</h2>
+        <p>버튼을 누르면 Render에 배포된 FastAPI 서버를 호출합니다.</p>
+        <button id="api-btn">API 호출하기</button>
+        <pre id="api-result">아직 호출 전입니다</pre>
+    </section>
+        <footer>
+            <p>© 2026 김한룡</p>
+        </footer>
+    <script src="script.js"></script>
+    <script>
+        const API_URL = "https://cloud-computing-personal-project-1.onrender.com";
+
+        document.getElementById("api-btn").addEventListener("click", async () => {
+            const out = document.getElementById("api-result");
+            out.textContent = "불러오는 중... (첫 호출은 30~60초 걸릴 수 있어요)";
+            try {
+                const res = await fetch(`${API_URL}/health`);
+                const data = await res.json();
+                out.textContent = "호출 성공!\n" + JSON.stringify(data, null, 2);
+            } catch (e) {
+                out.textContent = "호출 실패: " + e.message;
+            }
+        });
+    </script>
 </body>
 </html>
