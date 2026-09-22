@@ -4,61 +4,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>김한룡 소개</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <style>
-        .api-box { max-width: 520px; margin: 20px auto 40px; padding: 24px; background: white; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-        .api-box pre { margin-top: 12px; padding: 12px; background: #f0f0f0; border-radius: 8px; text-align: left; white-space: pre-wrap; }
-        body.dark .api-box { background: #2b2b2b; }
-        body.dark .api-box pre { background: #1a1a1a; }
-    </style>
 </head>
 <body>
-    <header>
-        <h1>김한룡을 소개합니다</h1>
-        <button id="theme-btn">다크모드 전환</button>
+    <header class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <nav class="kh-nav">
+            <span class="logo-mark">KH</span>
+            <button id="theme-btn" class="theme-toggle" aria-label="라이트 모드 전환">☀️ 라이트 모드</button>
+        </nav>
+        <div class="hero-inner">
+            <p class="eyebrow">HELLO, I'M</p>
+            <h1 class="hero-name">김한룡<span class="gold">을</span> 소개합니다</h1>
+            <p class="hero-sub">KAIST 디지털금융 MBA · Investment Banking</p>
+            <a href="#profile" class="scroll-cue" aria-label="아래로 스크롤">↓</a>
+        </div>
     </header>
 
-    <main class="cards">
-        <article class="card">
-            <img src="atleti_logo.jpg" alt="김한룡 프로필 사진">
-            <h2>김한룡</h2>
-            <p class="role">KAIST 디지털금융 MBA<br>Investment Banking</p>
-            <p>증권사에서<br>IB(IPO 및 비상장투자)<br>업무를 맡고 있습니다</p>
-            <a href="https://github.com/khy242-sys">GitHub 프로필</a>
-        </article>
-
-        <article class="card">
-            <h2>관심 분야</h2>
-            <p>AI<br>Data Science<br>Tech Industry<br>금융 데이터 분석<br>반복 업무 자동화<br>주식<br>KBO 야구 (롯데)<br><span class="photo-link" data-gallery="atleti">해외 축구 (ATLETI)</span><br><span class="photo-link" data-gallery="travel">해외 여행</span></p></p>
-        </article>
-
-        <article class="card">
-            <h2>이번 학기 목표</h2>
-            <p>웹 페이지와 API를<br>직접 만들어<br>클라우드에 배포해 보기</p>
-        </article>
-
-        <article class="card">
-            <h2>사용한 기술</h2>
-            <div class="badges">
-                <span class="badge">HTML</span>
-                <span class="badge">CSS</span>
-                <span class="badge">JavaScript</span>
-                <span class="badge">Python</span>
-                <span class="badge">FastAPI</span>
-                <span class="badge">Git</span>
-                <span class="badge">GitHub</span>
-                <span class="badge">Vercel</span>
-                <span class="badge">Render</span>
+    <main>
+        <section id="profile" class="band reveal" style="--delay:0s">
+            <div class="band-inner split">
+                <img src="atleti_logo.jpg" alt="김한룡 프로필 사진" class="avatar-lg">
+                <div class="band-text">
+                    <p class="eyebrow">PROFILE</p>
+                    <h2>김한룡</h2>
+                    <p class="role-lg">KAIST 디지털금융 MBA · Investment Banking</p>
+                    <p class="body-lg">증권사에서 IB(IPO 및 비상장투자) 업무를 맡고 있습니다</p>
+                    <a class="link-pill" href="https://github.com/khy242-sys" target="_blank" rel="noopener">GitHub 프로필 ↗</a>
+                </div>
             </div>
-        </article>
-    </main>
+        </section>
 
-    <section class="api-box">
-        <h2>백엔드 API 연동 결과</h2>
-        <p>버튼을 누르면 Render에 배포된 FastAPI 서버를 호출합니다.</p>
-        <button id="api-btn">API 호출하기</button>
-        <pre id="api-result">아직 호출 전입니다</pre>
-    </section>
+        <section class="band band-alt reveal" style="--delay:.05s">
+            <div class="band-inner">
+                <p class="eyebrow">INTERESTS</p>
+                <h2>관심 분야</h2>
+                <div class="tag-grid">
+                    <span class="tag">AI</span>
+                    <span class="tag">Data Science</span>
+                    <span class="tag">Tech Industry</span>
+                    <span class="tag">금융 데이터 분석</span>
+                    <span class="tag">반복 업무 자동화</span>
+                    <span class="tag">주식</span>
+                    <span class="tag tag-link photo-link" data-gallery="ipo">💼 IPO</span>
+                    <span class="tag">KBO 야구 (롯데)</span>
+                    <span class="tag tag-link photo-link" data-gallery="atleti">⚽ 해외 축구 (ATLETI)</span>
+                    <a href="#travel" class="tag tag-link photo-link">🧳 해외 여행</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="band reveal" style="--delay:.1s">
+            <div class="band-inner center">
+                <p class="eyebrow">THIS SEMESTER</p>
+                <h2>이번 학기 목표</h2>
+                <p class="goal-text">웹 페이지와 API를 직접 만들어<br>클라우드에 배포해 보기</p>
+            </div>
+        </section>
+
+        <section class="band band-alt reveal" style="--delay:.15s">
+            <div class="band-inner center">
+                <p class="eyebrow">STACK</p>
+                <h2>사용한 기술</h2>
+                <div class="badges">
+                    <span class="badge">HTML</span>
+                    <span class="badge">CSS</span>
+                    <span class="badge">JavaScript</span>
+                    <span class="badge">Python</span>
+                    <span class="badge">FastAPI</span>
+                    <span class="badge">Git</span>
+                    <span class="badge">GitHub</span>
+                    <span class="badge">Vercel</span>
+                    <span class="badge">Render</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="travel" class="band reveal" style="--delay:.2s">
+            <div class="band-inner center">
+                <p class="eyebrow">TRAVEL LOG</p>
+                <h2>다녀온 나라들</h2>
+                <p class="travel-sub">사진을 누르면 크게 볼 수 있어요.</p>
+                <div id="travel-grid" class="travel-grid"></div>
+                <div id="flag-row" class="flag-row"></div>
+            </div>
+        </section>
+
+        <section class="band band-alt reveal" style="--delay:.25s">
+            <div class="band-inner center api-box">
+                <h2>백엔드 API 연동 결과</h2>
+                <p>버튼을 누르면 Render에 배포된 FastAPI 서버를 호출합니다.</p>
+                <button id="api-btn" class="gold-btn">API 호출하기</button>
+                <pre id="api-result">아직 호출 전입니다</pre>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <p>© 2026 김한룡</p>
@@ -72,21 +116,14 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
-    <script>
-        const API_URL = "https://cloud-computing-personal-project-1.onrender.com";
+    <div id="lightbox" class="lightbox">
+        <button class="lightbox-close" aria-label="닫기">✕</button>
+        <button class="lightbox-prev" aria-label="이전 사진">‹</button>
+        <img id="lightbox-img" src="" alt="">
+        <button class="lightbox-next" aria-label="다음 사진">›</button>
+        <p id="lightbox-caption" class="lightbox-caption"></p>
+    </div>
 
-        document.getElementById("api-btn").addEventListener("click", async () => {
-            const out = document.getElementById("api-result");
-            out.textContent = "불러오는 중... (첫 호출은 30~60초 걸릴 수 있어요)";
-            try {
-                const res = await fetch(`${API_URL}/health`);
-                const data = await res.json();
-                out.textContent = "호출 성공!\n" + JSON.stringify(data, null, 2);
-            } catch (e) {
-                out.textContent = "호출 실패: " + e.message;
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
